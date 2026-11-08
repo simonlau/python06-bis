@@ -1,0 +1,28 @@
+[flake8]
+# Check for deep code nesting and logical complexity (McCabe complexity)
+max-complexity = 10
+
+# Explicitly clear out Flake8's default ignore list to enable ALL rules
+ignore =
+
+# Enable specific structural rules that are often turned off by default
+# E203: Whitespace before ':' (disabled only if using Black formatter compatibility)
+# W503/W504: Line breaks before/after binary operators
+extend-select = E,F,W,C
+
+# ignore Line break occurred before a binary operator 
+extend-ignore = W503
+
+# Exclude typical auto-generated or external dependency directories
+exclude =
+    .git,
+    __pycache__,
+    .venv,
+    venv,
+    dist,
+    build,
+    docs
+
+show-source = True
+count = True
+statistics = True
