@@ -27,3 +27,11 @@ Python language features and standard behavior.
 | Article | Summary | Updated |
 |---------|---------|---------|
 | [Structural Pattern Matching in Python](python/structural-pattern-matching.md) | `match`/`case` syntax, pattern types, guards, aliases, and common pitfalls (Python 3.10+). | 2026-11-09 |
+
+## python-typing
+
+Static typing in Python: narrowing, guards, and type-checker behavior.
+
+| Article | Summary | Updated |
+|---------|---------|---------|
+| [Type Narrowing](python-typing/type-narrowing.md) | `TypeIs`/`TypeGuard`, narrowing semantics, safety with mutability, PEP 647/742. | 2026-11-09 |

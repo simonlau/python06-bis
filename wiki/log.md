@@ -12,3 +12,11 @@
 ## [2026-11-09] ingest | Structural Pattern Matching in Python
 - Disposition: New
 - Raw: raw/python/realpython-structural-pattern-matching.md
+
+## [2026-11-09] ingest | Type Narrowing
+- Disposition: New
+- Raw: raw/typing/typing-narrowing.md
+
+## [2026-11-09] ingest | Type Narrowing
+- Disposition: Update
+- Raw: raw/python-typing/adamj-typeguard-narrow-types.md
