@@ -19,3 +19,11 @@ General Python object-oriented design: inheritance, composition, ABCs, mixins, a
 | Article | Summary | Updated |
 |---------|---------|---------|
 | [Inheritance and Composition in Python](python-oop/inheritance-and-composition.md) | When to use is-a inheritance vs has-a composition; ABCs, mixins, LSP, policy design. | 2026-11-08 |
+
+## python
+
+Python language features and standard behavior.
+
+| Article | Summary | Updated |
+|---------|---------|---------|
+| [Structural Pattern Matching in Python](python/structural-pattern-matching.md) | `match`/`case` syntax, pattern types, guards, aliases, and common pitfalls (Python 3.10+). | 2026-11-09 |

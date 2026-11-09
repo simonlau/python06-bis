@@ -8,3 +8,7 @@
 ## [2026-11-08] ingest | Inheritance and Composition in Python
 - Disposition: New
 - Raw: raw/python-oop/realpython-inheritance-composition-python.md
+
+## [2026-11-09] ingest | Structural Pattern Matching in Python
+- Disposition: New
+- Raw: raw/python/realpython-structural-pattern-matching.md
