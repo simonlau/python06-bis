@@ -20,3 +20,8 @@
 ## [2026-11-09] ingest | Type Narrowing
 - Disposition: Update
 - Raw: raw/python-typing/adamj-typeguard-narrow-types.md
+
+## [2026-11-09] ingest | TypedDict
+- Disposition: New
+- Raw: raw/python-typing/mousevspython-typeddict.md
+- Updated: Type Narrowing

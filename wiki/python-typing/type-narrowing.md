@@ -36,4 +36,5 @@ Narrowing can be unsafe with mutability or dynamic behavior:
 
 ## See Also
 
+- [TypedDict](typeddict.md)
 - [Structural Pattern Matching in Python](../python/structural-pattern-matching.md)

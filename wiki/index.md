@@ -35,3 +35,4 @@ Static typing in Python: narrowing, guards, and type-checker behavior.
 | Article | Summary | Updated |
 |---------|---------|---------|
 | [Type Narrowing](python-typing/type-narrowing.md) | `TypeIs`/`TypeGuard`, narrowing semantics, safety with mutability, PEP 647/742. | 2026-11-09 |
+| [TypedDict](python-typing/typeddict.md) | Typed dictionaries for heterogeneous shapes (class/functional forms, PEP 589). | 2026-11-09 |
