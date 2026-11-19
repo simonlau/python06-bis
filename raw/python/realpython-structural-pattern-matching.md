@@ -4106,7 +4106,7 @@ Master Real-World Python Skills With Unlimited Access to Real Python
 
 [Level Up Your Python Skills »](/account/join/?utm_source=rp_article_footer&utm_content=structural-pattern-matching)
 
-Master Real-World Python Skills  
+Master Real-World Python Skills
 With Unlimited Access to Real Python
 
 ![Locked learning resources](/static/videos/lesson-locked.f5105cfd26db.svg)

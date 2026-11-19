@@ -10,7 +10,7 @@ ignore =
 # W503/W504: Line breaks before/after binary operators
 extend-select = E,F,W,C
 
-# ignore Line break occurred before a binary operator 
+# ignore Line break occurred before a binary operator
 extend-ignore = W503
 
 # Exclude typical auto-generated or external dependency directories
