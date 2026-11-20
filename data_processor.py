@@ -36,16 +36,12 @@ class DataProcessor(ABC):
         pass
 
 
-def is_int_but_not_bool(x: Any) -> bool:
-    return isinstance(x, int) and not isinstance(x, bool)
+def is_int_or_float_but_not_bool(x: Any) -> TypeGuard[int | float]:
+    return isinstance(x, (int, float)) and not isinstance(x, bool)
 
 
-def is_int_list(val: list[Any]) -> TypeGuard[list[int]]:
-    return all(is_int_but_not_bool(x) for x in val)
-
-
-def is_float_list(val: list[Any]) -> TypeGuard[list[float]]:
-    return all(isinstance(x, float) for x in val)
+def is_int_or_float_list(val: list[Any]) -> TypeGuard[list[int | float]]:
+    return all(is_int_or_float_but_not_bool(x) for x in val)
 
 
 def is_str_list(val: list[Any]) -> TypeGuard[list[str]]:
@@ -71,7 +67,7 @@ class NumericProcessor(DataProcessor):
             case int() | float():
                 return True
             case list():
-                return is_int_list(data) or is_float_list(data)
+                return is_int_or_float_list(data)
             case _:
                 return False
 
@@ -82,9 +78,7 @@ class NumericProcessor(DataProcessor):
         match data:
             case int() | float():
                 self._list.append(str(data))
-            case list() if is_float_list(data):
-                self._list.extend(str(item) for item in data)
-            case list() if is_int_list(data):
+            case list() if is_int_or_float_list(data):
                 self._list.extend(str(item) for item in data)
             case list():
                 return
