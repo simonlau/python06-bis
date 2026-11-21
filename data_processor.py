@@ -16,15 +16,16 @@ class Log(TypedDict):
 
 class DataProcessor(ABC):
     _list: list[str]
-    _index: int
+    _outputted: int
 
     def __init__(self) -> None:
         self._list: list[str] = []
-        self._index = 0
+        self._outputted = 0
 
     def output(self) -> tuple[int, str]:
-        i, s = self._index, self._list[self._index]
-        self._index += 1
+        i = self._outputted
+        self._outputted += 1
+        s = self._list.pop()
         return i, s
 
     @abstractmethod
