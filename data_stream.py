@@ -29,7 +29,7 @@ class DataProcessor(ABC):
         self._output: list[str] = []
 
     def output(self) -> tuple[int, str]:
-        s = self._list.pop()
+        s = self._list.pop(0)
         self._output.append(s)
         return len(self._output) - 1, s
 
@@ -119,9 +119,7 @@ class TextProcessor(DataProcessor):
             case str():
                 self._list.append(data)
             case list() if is_str_list(data):
-                print(f"list {self._list}")
                 self._list.extend(data)
-                print(f"list {self._list}")
             case list():
                 return
 

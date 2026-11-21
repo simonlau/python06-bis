@@ -25,7 +25,7 @@ class DataProcessor(ABC):
     def output(self) -> tuple[int, str]:
         i = self._outputted
         self._outputted += 1
-        s = self._list.pop()
+        s = self._list.pop(0)
         return i, s
 
     @abstractmethod
