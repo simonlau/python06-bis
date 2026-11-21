@@ -21,7 +21,7 @@ select = [
     "pedantic",
     "restriction",
 ]
-extend-select = ["ANN", "PYI", "blanket-type-ignore"]
+extend-select = ["ANN", "PYI", "blanket-type-ignore", "line-too-long"]
 
 ignore = [
     "undocumented-public-module",
