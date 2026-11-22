@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+from typing import TypeGuard
 
 
 class Creature(ABC):
@@ -38,40 +39,58 @@ class Pyrodon(Creature):
 
 class TransformCapability(ABC):
     @abstractmethod
-    def transform(self) -> None:
+    def transform(self) -> str:
         pass
 
     @abstractmethod
-    def revert(self) -> None:
+    def revert(self) -> str:
         pass
+
+
+def has_transform_capability(obj: Creature) -> TypeGuard[TransformCapability]:
+    return isinstance(obj, TransformCapability)
 
 
 class Shiftling(Creature, TransformCapability):
+    _transformed: bool
+
     def __init__(self) -> None:
         super().__init__("Shiftling", "Normal")
+        self._transformed = False
 
     def attack(self) -> str:
+        if self._transformed:
+            return f"{self._name} performs a boosted strike"
         return f"{self._name} attacks normally."
 
-    def transform(self) -> None:
-        pass
+    def transform(self) -> str:
+        self._transformed = True
+        return f"{self._name} shifts into a sharper form!"
 
-    def revert(self) -> None:
-        pass
+    def revert(self) -> str:
+        self._transformed = False
+        return f"{self._name} returns to normal."
 
 
 class Morphagon(Creature, TransformCapability):
+    _transformed: bool
+
     def __init__(self) -> None:
         super().__init__("Morphagon", "Normal/Dragon")
+        self._transformed = False
 
     def attack(self) -> str:
+        if self._transformed:
+            return f"{self._name} unleashes a devastating morph strike!"
         return f"{self._name} attacks normally."
 
-    def transform(self) -> None:
-        pass
+    def transform(self) -> str:
+        self._transformed = True
+        return f"{self._name} morphs into a dragonic battle form!"
 
-    def revert(self) -> None:
-        pass
+    def revert(self) -> str:
+        self._transformed = False
+        return f"{self._name} stablizes its form."
 
 
 class CreatureFactory(ABC):
