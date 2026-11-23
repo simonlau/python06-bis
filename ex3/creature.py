@@ -10,6 +10,9 @@ class Creature(ABC):
         self._name = name
         self._type = creature_type
 
+    def __repr__(self) -> str:
+        return f"{self._name}"
+
     def __str__(self) -> str:
         return f"{self._name} is a {self._type} type Creature"
 
