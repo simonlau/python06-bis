@@ -29,7 +29,8 @@ def battle(opponents: list[Opponent]) -> None:
     for i, (one, two) in enumerate(y):
         f1, s1 = one
         f2, s2 = two
-        print(f"Tournament {i} (???)")
+        is_ok = s1.is_valid(f1) and s2.is_valid(f2)
+        print(f"Tournament {i} ({'basic' if is_ok else 'error'})")
         print(f"[ ({f1!r}+{s1!r}), ({f2!r}+{s2!r}) ]")
         print("*** Tournament ***")
         print("2 opponents involved")
@@ -39,8 +40,21 @@ def battle(opponents: list[Opponent]) -> None:
         print("vs.")
         print(f2)
         print("now fight!")
-        s1.act(f1)
-        s2.act(f2)
+        if s1.is_valid(f1):
+            s1.act(f1)
+        else:
+            print("Battle error, aborting tournament: ", end="")
+            print(f"Invalid Creature '{f1!r}' ", end="")
+            print("for this aggressive strategy")
+            break
+        if s2.is_valid(f2):
+            s2.act(f2)
+        else:
+            print("Battle error, aborting tournament: ", end="")
+            print(f"Invalid Creature '{f2!r}' ", end="")
+            print("for this aggressive strategy")
+            break
+        print()
 
 
 def main() -> None:
