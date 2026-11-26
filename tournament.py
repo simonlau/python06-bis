@@ -20,12 +20,15 @@ def create_creatures(
 
 
 def battle(opponents: list[Opponent]) -> None:
-    x = []
+    tmp: list[tuple[Creature, BattleStrategy]] = []
     for factory, strategy in opponents:
-        # ruff: ignore[repeated-append]
-        x.append((factory.create_base(), strategy))
-        x.append((factory.create_evolved(), strategy))
-    y = itertools.combinations(x, 2)
+        tmp.extend(
+            [
+                (factory.create_base(), strategy),
+                (factory.create_evolved(), strategy),
+            ]
+        )
+    y = itertools.combinations(tmp, 2)
     for i, (one, two) in enumerate(y):
         f1, s1 = one
         f2, s2 = two
